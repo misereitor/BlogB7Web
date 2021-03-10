@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="/css/template.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#pageTitle}}
+    <title>{{pageTitle}}</title>
+    {{/pageTitle}}
+    {{^pageTitle}}
+    <title>{{h.defaultPageTitle}}</title>
+    {{/pageTitle}}
+</head>
+
+<body>
+    <header>
+        <h1>Cabeçalho</h1>
+        {{#user}}
+        <p>Olá, <a href="/profile">{{user.name}}</a></p>
+        {{/user}}
+        <ul>
+            {{#h.menu}}
+            <li><a href="{{slug}}">{{name}}</a></li>
+            {{/h.menu}}
+        </ul>
+    </header>
+    {{#flashes}}
+    {{#success}}
+    <div class="warning"> {{.}} </div>
+    {{/success}}
+    {{#error}}
+    <div class="warning"> {{.}} </div>
+    {{/error}}
+    {{#info}}
+    <div class="warning"> {{.}} </div>
+    {{/info}}
+    {{/flashes}}

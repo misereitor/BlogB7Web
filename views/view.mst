@@ -1,0 +1,6 @@
+{{>header}}
+{{#post.photo}}
+    <img src="/media/{{post.photo}}" alt="/post/{{slug}}">
+{{/post.photo}}
+<h1>{{post.title}}</h1>
+<article>{{post.body}}</article>
